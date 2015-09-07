@@ -176,7 +176,7 @@ class Registry {
      * @param  string $component
      * @return mixed
      */
-    public function all($locale, $component = null)
+    public function all($locale, $component = null, $default)
     {
         if ($component === null)
         {
@@ -184,7 +184,8 @@ class Registry {
         }
         else
         {
-            return $this->registryparent[$locale][$component];
+            return (isset($this->registryparent[$locale]) &&  isset($this->registryparent[$locale][$component]) )?
+                $this->registryparent[$locale][$component]: $default;
         }
     }
 }
