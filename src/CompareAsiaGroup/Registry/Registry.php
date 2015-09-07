@@ -176,7 +176,7 @@ class Registry {
      * @param  string $component
      * @return mixed
      */
-    public function all($locale, $component = null, $default)
+    public function all($locale, $component = null, $default  = null)
     {
         if ($component === null)
         {
